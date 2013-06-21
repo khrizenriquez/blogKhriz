@@ -1,0 +1,117 @@
+/* 
+    Document   : estiloIndex
+    Created on : 20/06/2013, 10:44:15 PM
+    Author     : @khrizenriquez
+    Description:
+        Archivo que me estara sirviendo para editar la vista de usuario en la pagina de index,
+        contiene css basico y unos cuantos media querys, solo para mejorar el aspecto del usuario
+*/
+/*importando estilso importantes*/
+@import url('../normalize.css');
+@import url('../bootstrap.css');
+@import url('../bootstrap-responsive.css');
+@import url('../jqueryUI/smoothness/jquery-ui-1.10.3.custom.css');
+@import url('../ResponsiveSlides/responsiveslides.css');
+/*importando estilso importantes*/
+body
+{
+    background: #1e5799; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlNTc5OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzI5ODlkOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3ZGI5ZTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(left,  #1e5799 0%, #2989d8 50%, #7db9e8 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#1e5799), color-stop(50%,#2989d8), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  #1e5799 0%,#2989d8 50%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  #1e5799 0%,#2989d8 50%,#7db9e8 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  #1e5799 0%,#2989d8 50%,#7db9e8 100%); /* IE10+ */
+    background: linear-gradient(to right,  #1e5799 0%,#2989d8 50%,#7db9e8 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 ); /* IE6-8 */
+
+    font-size: 16px;
+    padding: 3em 0.5em 5em 0.5em;
+    text-align: center;
+}
+html
+{
+    background: rgb(40,176,255); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjI0JSIgc3RvcC1jb2xvcj0iIzI4YjBmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyOGIwZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(45deg,  rgba(40,176,255,1) 24%, rgba(40,176,255,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(24%,rgba(40,176,255,1)), color-stop(100%,rgba(40,176,255,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg,  rgba(40,176,255,1) 24%,rgba(40,176,255,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(45deg,  rgba(40,176,255,1) 24%,rgba(40,176,255,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(45deg,  rgba(40,176,255,1) 24%,rgba(40,176,255,1) 100%); /* IE10+ */
+    background: linear-gradient(45deg,  rgba(40,176,255,1) 24%,rgba(40,176,255,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#28b0ff', endColorstr='#28b0ff',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+    text-align: center;
+}
+
+/*creando los selectores por id*/
+#contenedorSlider
+{
+    display: inline-block;
+    padding: 0.5em;
+}
+#contenido_widget
+{
+    text-align: right;
+}
+#divContent
+{
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+#divContenedor
+{
+    width: 60%;
+}
+#divContenedor, #divSidebar
+{
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+}
+#divContenedorCarousel
+{
+    height: 20em;
+    width: 40em;
+}
+#divContenedorCarousel div img
+{
+    height: 100%;
+    width: 100%;
+}
+#divSidebar
+{
+    width: 30%;
+}
+#menu
+{
+
+}
+#myCarousel
+{
+    height: 20em;
+    padding: 1em;
+    width: 40em;
+}
+#principal
+{
+    display: inline-block;
+    background: #D8D8D8;
+    border-radius: 0.75em;
+    text-align: center;
+    width: 80%;
+}
+#titulo_widget
+{
+    color: #f3f3f3;
+}
+/*creando los selectores por id*/
+
+/*creando los selectores por clase*/
+.url_boton
+{
+    text-decoration: none;
+}
+/*creando los selectores por clase*/
