@@ -44,6 +44,8 @@ class Trabajo
     private $clave;
     private $nombreBD;
     private $datos;
+    private $post;
+    private $comentarios;
     
     function __construct()
     {
@@ -52,7 +54,9 @@ class Trabajo
         $this->clave = "";
         $this->nombreBD = "neptuno";
         $this->datos = array();
-        $this->noticias=array();
+        $this->noticias = array();
+        $this->post = array();
+        $this->comentarios = array();
     }
 
 	function obtenerNoticias()
@@ -105,6 +109,26 @@ class Trabajo
          
             return $lista;
             $mostrando = null;//dejamos con un valor nulo la conexion
+        }else
+        {
+            print "No existen datos";
+        }
+    }
+
+    function obtenerPostPorId()
+    {
+        $queryPost = "SELECT * FROM productos WHERE IdProducto = ".$_GET['id'];
+
+        $postId = Conectar::conexion($this->nombreHost, $this->usuario, $this->clave, $this->nombreBD)->query($queryPost);
+
+        if($postId ->rowCount() > 0)//si cuando hace el query obtiene un resultado los desplegara
+        {
+            foreach($postId as $totalResultado)
+            {
+                $this->post[] = $totalResultado;
+            }
+            return $this->post;
+            $postId = null;//dejamos con un valor nulo la conexion
         }else
         {
             print "No existen datos";

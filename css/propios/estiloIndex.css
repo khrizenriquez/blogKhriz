@@ -85,6 +85,12 @@ html
 {
     width: 30%;
 }
+#div_post_contenedor_detalle, #divSidebar
+{
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+}
 #menu
 {
 
@@ -116,6 +122,18 @@ html
     background: rgba(216, 216, 216, 0.5);
     cursor: pointer;
 }
+/*efecto del texto input de busqueda*/
+/*#s
+{
+    transition: all 1s ease;
+    width: 30%;
+}
+#s:focus, #s:hover
+{
+    transition: all 1s ease;
+    width: 60%;
+}*/
+/*efecto del texto input de busqueda*/
 #texto_post
 {
     
@@ -430,6 +448,12 @@ html
         background: rgba(216, 216, 216, 0.5);
         cursor: pointer;
     }
+    /*efecto del texto input de busqueda*/
+    #s
+    {
+
+    }
+    /*efecto del texto input de busqueda*/
     #texto_post
     {
         

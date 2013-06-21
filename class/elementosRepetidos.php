@@ -57,7 +57,7 @@ class ElementosRepetidos
                                     </li>
                                 </ul>
                                 <form class='navbar-form pull-right'>
-                                    <input type='text' name='s' class='span3 search-query' placeholder='Buscar' title='Escribe algo para que te lo busque' />
+                                    <input type='text' id='s' name='s' class='span3 search-query' placeholder='Buscar' title='Escribe algo para que te lo busque' />
                                     <a href='' class='btn btn-primary' title='Quiero buscar'><i class='icon-search icon-white'></i></a>
                                 </form>
                                             

@@ -1,7 +1,9 @@
 <?php
 require_once("class/class.php");
 require_once 'class/elementosRepetidos.php';
-$tra = new Trabajo();
+
+$tra=new Trabajo();
+$datos=$tra->obtenerPostPorId();
 ?>
 <!DOCTYPE html>
 <html lang='es-mx'>
@@ -73,7 +75,62 @@ $tra = new Trabajo();
 
 			<div id="divMain">
 				<div id="divContent">
-					Hola
+					<div id="divContenedor">
+
+					<!--******************detalle post*******************-->
+					
+						<!--<div class="div_separador_detalle_post"></div>-->
+							<div id="div_detalle_post">
+								<?php echo $datos[0]["NombreProducto"];?>
+								<hr>
+								<?php echo $datos[0]["enexistencia"];?>
+								<hr>
+								<div id="div_contenedor_categoria_y_descarga_post">
+									<div id="div_categoria_post">Categoría : PHP</div>
+								</div>
+								<div id="div_form_comentarios">
+								<hr>
+								<form name="form" action="" method="post">
+									Nombre:<input type="text" name="nom" placeholder='Nombre' />
+									<br>
+									
+									E-Mail:<input type="email" name="correo" placeholder='Correo electrónico' />(no será publicado)
+									<br>
+									Sitio Web : <input type="text" name="web">
+									<br>
+									Mensaje: <textarea name="mensaje" cols="40" rows="10"></textarea>
+									<br>
+									<br>
+									<button class='btn btn-inverse' type="button" title="Comenta!" onClick="">
+										<i class='icon-pencil icon-white'></i>Comentar</button>
+								</form>
+								</div>
+								<div id="div_comentarios_post">
+									<hr>
+									<strong>Comentarios:</strong>
+									<ul>
+									<?php
+									for ($i=0;$i<10;$i++)
+									{
+									?>
+									<li>
+									Claudio dice:
+									<br>
+									hola me gustó este post
+									<hr>
+									</li>
+									<?php
+									}
+									?>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="div_separador_detalle_post"></div>
+					</div>
+				</div>
+				<!--***********************fin detalle post**********-->
+
 				</div>
 					<div id="divSidebar">
 						
