@@ -103,9 +103,34 @@ html
     text-align: center;
     width: 80%;
 }
+#post
+{
+    margin: 2em;
+    padding: 0.5em;
+    background: rgba(216, 216, 216, 0.5);
+    transition: all 1s ease;
+}
+#post:hover, #post:focus
+{
+    box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.5);
+    background: rgba(216, 216, 216, 0.5);
+    cursor: pointer;
+}
+#texto_post
+{
+    
+    margin: 2em;
+    padding: 0.5em;
+    text-align: justify;
+}
 #titulo_widget
 {
     color: #f3f3f3;
+}
+#titulo, #fecha
+{
+    display: inline-block;
+    vertical-align: top;
 }
 /*creando los selectores por id*/
 
@@ -115,3 +140,318 @@ html
     text-decoration: none;
 }
 /*creando los selectores por clase*/
+
+@media(max-width: 980px) and (min-width: 768px)
+{
+    /*importando estilso importantes*/
+    body
+    {
+        padding: 0em 0.5em 0.5em 0.5em;
+        text-align: center;
+    }
+    /*creando los selectores por id*/
+    #contenedorSlider
+    {
+        display: inline-block;
+        padding: 0.5em;
+    }
+    #contenido_widget
+    {
+        text-align: right;
+    }
+    #divContent
+    {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+    }
+    #divContenedor
+    {
+        width: 60%;
+    }
+    #divContenedor, #divSidebar
+    {
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: top;
+    }
+    #divContenedorCarousel
+    {
+        height: 20em;
+        width: 40em;
+    }
+    #divContenedorCarousel div img
+    {
+        height: 100%;
+        width: 100%;
+    }
+    #divSidebar
+    {
+        width: 30%;
+    }
+    #menu
+    {
+
+    }
+    #myCarousel
+    {
+        height: 20em;
+        padding: 1em;
+        width: 40em;
+    }
+    #principal
+    {
+        display: inline-block;
+        background: #D8D8D8;
+        border-radius: 0.75em;
+        text-align: center;
+        width: 80%;
+    }
+    #post
+    {
+        margin: 2em;
+        padding: 0.5em;
+        background: rgba(216, 216, 216, 0.5);
+        transition: all 1s ease;
+    }
+    #post:hover, #post:focus
+    {
+        box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.5);
+        background: rgba(216, 216, 216, 0.5);
+        cursor: pointer;
+    }
+    #texto_post
+    {
+        
+        margin: 2em;
+        padding: 0.5em;
+        text-align: justify;
+    }
+    #titulo_widget
+    {
+        color: #f3f3f3;
+    }
+    #titulo, #fecha
+    {
+        display: inline-block;
+        vertical-align: top;
+    }
+    /*creando los selectores por id*/
+
+    /*creando los selectores por clase*/
+    .url_boton
+    {
+        text-decoration: none;
+    }
+    /*creando los selectores por clase*/
+}
+
+@media(max-width: 768px) and (min-width: 600px)
+{
+    /*importando estilso importantes*/
+    body
+    {
+        padding: 0em 0.5em 0.5em 0.5em;
+        text-align: center;
+    }
+    /*creando los selectores por id*/
+    #contenedorSlider
+    {
+        display: inline-block;
+        padding: 0.5em;
+    }
+    #contenido_widget
+    {
+        text-align: right;
+    }
+    #divContent
+    {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+    }
+    #divContenedor
+    {
+        width: 90%;
+    }
+    #divContenedor, #divSidebar
+    {
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: top;
+    }
+    #divContenedorCarousel
+    {
+        height: 20em;
+        width: 40em;
+    }
+    #divContenedorCarousel div img
+    {
+        height: 100%;
+        width: 100%;
+    }
+    #divSidebar
+    {
+        width: 50%;
+    }
+    #menu
+    {
+
+    }
+    #myCarousel
+    {
+        height: 20em;
+        padding: 1em;
+        width: 40em;
+    }
+    #principal
+    {
+        display: inline-block;
+        background: #D8D8D8;
+        border-radius: 0.75em;
+        text-align: center;
+        width: 90%;
+    }
+    #post
+    {
+        margin: 2em;
+        padding: 0.5em;
+        background: rgba(216, 216, 216, 0.5);
+        transition: all 1s ease;
+    }
+    #post:hover, #post:focus
+    {
+        box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.5);
+        background: rgba(216, 216, 216, 0.5);
+        cursor: pointer;
+    }
+    #texto_post
+    {
+        
+        margin: 2em;
+        padding: 0.5em;
+        text-align: justify;
+    }
+    #titulo_widget
+    {
+        color: #f3f3f3;
+    }
+    #titulo, #fecha
+    {
+        display: inline-block;
+        vertical-align: top;
+    }
+    /*creando los selectores por id*/
+
+    /*creando los selectores por clase*/
+    .url_boton
+    {
+        text-decoration: none;
+    }
+    /*creando los selectores por clase*/
+}
+
+@media(max-width: 600px)
+{
+    /*importando estilso importantes*/
+    body
+    {
+        padding: 0em 0.5em 0.5em 0.5em;
+        text-align: center;
+    }
+    /*creando los selectores por id*/
+    #contenedorSlider
+    {
+        display: inline-block;
+        padding: 0.5em;
+    }
+    #contenido_widget
+    {
+        text-align: right;
+    }
+    #divContent
+    {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+    }
+    #divContenedor
+    {
+        width: 100%;
+    }
+    #divContenedor, #divSidebar
+    {
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: top;
+    }
+    #divContenedorCarousel
+    {
+        height: 20em;
+        width: 40em;
+    }
+    #divContenedorCarousel div img
+    {
+        height: 100%;
+        width: 100%;
+    }
+    #divSidebar
+    {
+        width: 50%;
+    }
+    #menu
+    {
+
+    }
+    #myCarousel
+    {
+        height: 20em;
+        padding: 1em;
+        width: 40em;
+    }
+    #principal
+    {
+        display: inline-block;
+        background: #D8D8D8;
+        border-radius: 0.75em;
+        text-align: center;
+        width: 95%;
+    }
+    #post
+    {
+        margin: 2em;
+        padding: 0.5em;
+        background: rgba(216, 216, 216, 0.5);
+        transition: all 1s ease;
+    }
+    #post:hover, #post:focus
+    {
+        box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.5);
+        background: rgba(216, 216, 216, 0.5);
+        cursor: pointer;
+    }
+    #texto_post
+    {
+        
+        margin: 2em;
+        padding: 0.5em;
+        text-align: justify;
+    }
+    #titulo_widget
+    {
+        color: #f3f3f3;
+    }
+    #titulo, #fecha
+    {
+        display: inline-block;
+        vertical-align: top;
+    }
+    /*creando los selectores por id*/
+
+    /*creando los selectores por clase*/
+    .url_boton
+    {
+        text-decoration: none;
+    }
+    /*creando los selectores por clase*/
+}

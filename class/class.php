@@ -28,6 +28,12 @@ abstract class Conectar
 		return $correcta;
 	}
 	//Función para invertir fecha
+    public static function corta_palabra($palabra,$num)
+    {
+        $largo=strlen($palabra);//indicarme el largo de una cadena
+        $cadena=substr($palabra,0,$num);
+        return $cadena;
+    }
 }
 
 class Trabajo 
@@ -68,5 +74,41 @@ class Trabajo
             print "No existen datos";
         }
 	}
+    function obtenerPaginacionNoticias($inicio, $categoria)
+    {
+        $queryPaginacion = "SELECT * FROM productos where IdCategoria = $categoria ORDER BY IdProducto DESC LIMIT $inicio, 10";
+
+        $paginacion = Conectar::conexion($this->nombreHost, $this->usuario, $this->clave, $this->nombreBD)->query($queryPaginacion);
+
+        if($paginacion ->rowCount() > 0)//si cuando hace el query obtiene un resultado los desplegara
+        {
+            foreach($paginacion as $totalResultado)
+            {
+                $this->noticias[] = $totalResultado;
+            }
+            return $this->noticias;
+            $paginacion = null;//dejamos con un valor nulo la conexion
+        }else
+        {
+            print "No existen datos";
+        }
+    }
+    public function total_comentarios($id_noticia)
+    {
+        $querySelect = "SELECT count(*) as cuantos from comentarios where idProductos = $id_noticia";
+
+        $mostrando = Conectar::conexion($this->nombreHost, $this->usuario, $this->clave, $this->nombreBD)->query($querySelect);
+
+        if($mostrando ->rowCount() > 0)//si cuando hace el query obtiene un resultado los desplegara
+        {
+            $lista = $this->datos[0]['cuantos'];
+         
+            return $lista;
+            $mostrando = null;//dejamos con un valor nulo la conexion
+        }else
+        {
+            print "No existen datos";
+        }
+    }
 }
 ?>

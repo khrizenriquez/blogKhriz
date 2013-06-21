@@ -44,7 +44,7 @@ class ElementosRepetidos
                             <div class='nav-collapse collapse'>
                                 <ul class='nav'>
                                     <li class='$menuActivo'>
-                                        <a href='index.php'><i class='icon-home icon-white'></i> Página principal</a>
+                                        <a href='http://127.0.0.1/blogkhriz/'><i class='icon-home icon-white'></i> Página principal</a>
                                     </li>
                                     <li>
                                         <a href='#'><i class='icon-user icon-white'></i> Acerca de Khriz</a>
@@ -57,7 +57,7 @@ class ElementosRepetidos
                                     </li>
                                 </ul>
                                 <form class='navbar-form pull-right'>
-                                    <input type='text' name='s' class='span3' placeholder='Buscar' title='Escribe algo para que te lo busque' />
+                                    <input type='text' name='s' class='span3 search-query' placeholder='Buscar' title='Escribe algo para que te lo busque' />
                                     <a href='' class='btn btn-primary' title='Quiero buscar'><i class='icon-search icon-white'></i></a>
                                 </form>
                                             
