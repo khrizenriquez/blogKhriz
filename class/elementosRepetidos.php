@@ -1,7 +1,9 @@
 <?php
 /*
- * creado por Khriz Enríquez (tw) @khrizenriquez (fb) /khrizenriquez
- */
+Creado por Khriz Enríquez (A-K)
+@khrizenriquez -- Pueden escribirme en caso de cualquier duda o sugerencia :D
+*/
+
 class ElementosRepetidos
 {
     private $anioActual = "";
@@ -40,7 +42,7 @@ class ElementosRepetidos
                                 <span class='icon-bar'></span>
                                 <span class='icon-bar'></span>
                             </a>
-                            <a class='brand' href=''>Khrizenríquez blog</a>                    
+                            <a class='brand' href='https://github.com/khrizenriquez/blogKhriz'>Khrizenríquez blog</a>                    
                             <div class='nav-collapse collapse'>
                                 <ul class='nav'>
                                     <li class='$menuActivo'>

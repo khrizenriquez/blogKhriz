@@ -1,4 +1,9 @@
 <?php
+/*
+Creado por Khriz Enríquez (A-K)
+@khrizenriquez -- Pueden escribirme en caso de cualquier duda o sugerencia :D
+*/
+
 require_once("class/class.php");
 require_once 'class/elementosRepetidos.php';
 
@@ -30,6 +35,7 @@ $datos=$tra->obtenerPostPorId();
 		<script src='js/jsBootstrap/bootstrap.js'></script>
 		<script src='js/ResponsiveSlides/responsiveslides.min.js'></script>
 		<script src='js/jQuery/valoresIniciales.js'></script>
+		<script src='js/js/funciones.js'></script>
 		<script>
 			$('.carousel').carousel({
 			  interval: 1000
@@ -43,10 +49,25 @@ $datos=$tra->obtenerPostPorId();
 			    });
 		    });
 		</script>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
 		<!-- area de scripts -->
 	</head>
 
 	<body>
+
+		<div id="fb-root"></div>
+		<script>
+			(function(d, s, id)
+			{
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}
+			(document, 'script', 'facebook-jssdk'));
+		</script>
 
 		<section id="principal">
 
@@ -57,6 +78,7 @@ $datos=$tra->obtenerPostPorId();
 				?>
 			</nav>
 
+			<!-- elementos para el slider -->
 			<header id="contenedorSlider">
 				<!-- Slideshow 1 -->
 			    <ul class="rslides" id="slider1">
@@ -72,74 +94,92 @@ $datos=$tra->obtenerPostPorId();
 			    </ul>
 			    <!-- Slideshow 1 -->
 			</header>
+			<!-- elementos para el slider -->
 
 			<div id="divMain">
 				<div id="divContent">
 					<div id="divContenedor">
-
-					<!--******************detalle post*******************-->
-					
-						<!--<div class="div_separador_detalle_post"></div>-->
-							<div id="div_detalle_post">
-								<?php echo $datos[0]["NombreProducto"];?>
+						<div id="div_detalle_post">
+							<?php echo $datos[0]["NombreProducto"];?>
+							<hr>
+							<?php echo $datos[0]["enexistencia"];?>
+							<hr>
+							<div id="div_contenedor_categoria_y_descarga_post">
+								<div id="div_categoria_post">Categoría : PHP</div>
+							</div>
+							<div id="div_form_comentarios">
 								<hr>
-								<?php echo $datos[0]["enexistencia"];?>
-								<hr>
-								<div id="div_contenedor_categoria_y_descarga_post">
-									<div id="div_categoria_post">Categoría : PHP</div>
-								</div>
-								<div id="div_form_comentarios">
-								<hr>
-								<form name="form" action="" method="post">
-									Nombre:<input type="text" name="nom" placeholder='Nombre' />
+								<form name="form" id='form' action="procesa_comentarios.php" method="POST" class='form-horizontal'>
+									Nombre: <input class='input-block-level' type="text" name="nom" placeholder='Nombre' title='Ingresa tu nombre para los comentarios, es obligatorio este campo' />
+									E-Mail: <input class='input-block-level' type="email" name="correo" placeholder='Correo electrónico' title='Escribe tu email, no lo revelaremos a los demás' />
+									Sitio Web: <input class='input-block-level' type="text" name="web" placeholder='Tu sitio web' title='Puedes ingresar la url de tu página y los que vean los posts pueden visitarla' />
+									Mensaje: <textarea class='input-block-level' name="mensaje" cols="40" rows="10" title='Se tan amable de dejar un mensaje para poder mejorar :D, gracias'></textarea>
 									<br>
-									
-									E-Mail:<input type="email" name="correo" placeholder='Correo electrónico' />(no será publicado)
-									<br>
-									Sitio Web : <input type="text" name="web">
-									<br>
-									Mensaje: <textarea name="mensaje" cols="40" rows="10"></textarea>
-									<br>
-									<br>
-									<button class='btn btn-inverse' type="button" title="Comenta!" onClick="">
-										<i class='icon-pencil icon-white'></i>Comentar</button>
+									<div id="valor"></div>
+									<input type="hidden" name="idProducto" value="<?php echo $_GET["id"];?>" />
+									<input type="hidden" name="url" />
+									<button class='btn btn-inverse' type="button" title="Comenta!" onClick="valida_comentarios();">
+										<i class='icon-pencil icon-white'></i>Comentar
+									</button>
 								</form>
-								</div>
-								<div id="div_comentarios_post">
-									<hr>
-									<strong>Comentarios:</strong>
-									<ul>
-									<?php
-									for ($i=0;$i<10;$i++)
+							</div>
+							<div id="div_comentarios_post">
+								<hr>
+								<strong>Comentarios:</strong>
+								<ul>
+								<?php
+								$comentarios = $tra->obtenerComentarios($_GET['id']);
+								for ($i=0;$i<sizeof($comentarios);$i++)
+								{
+									if (empty($com[$i]["Web"]))
 									{
-									?>
-									<li>
-									Claudio dice:
-									<br>
-									hola me gustó este post
-									<hr>
-									</li>
-									<?php
+										$nombre="<strong>".$comentarios[$i]["Nombre"]."</strong>";
+									}else
+									{
+										$nombre="<a href='http://".$comentarios[$i]["Web"]."' target='_blank'>".$comentarios[$i]["Nombre"]."</a>";
 									}
-									?>
-									</ul>
-								</div>
+								?>
+								<li>
+								<?php print $nombre ?>
+								<br>
+								<?php print $comentarios[$i]['Text'] ?>
+								<hr>
+								</li>
+								<?php
+								}
+								?>
+								</ul>
 							</div>
 						</div>
-						<div class="div_separador_detalle_post"></div>
 					</div>
-				</div>
-				<!--***********************fin detalle post**********-->
 
-				</div>
-					<div id="divSidebar">
-						
-						<div id="separador_widget"></div>
-						<div id="widget">
-										
-								<div id="caja_widget">
-									<div id="titulo_widget" class='label-inverse'>Categorías</div>
-									<?php
+					<div id="divSidebar">		
+					<div id="separador_widget"></div>
+					<div id="widget">										
+						<!-- usando los comentarios de fb -->
+						<div class="fb-follow" data-href="https://www.facebook.com/KhrizEnriquez" data-show-faces="true" data-font="verdana" data-width="250">
+						</div>
+						<!-- usando los comentarios de fb -->
+						<!-- usando los post de g+ -->
+						<!-- Place this tag where you want the share button to render. -->
+						<div class="g-plus" data-action="share" data-annotation="vertical-bubble" data-height="60"></div>
+						<!-- Place this tag after the last share tag. -->
+						<script type="text/javascript">
+							window.___gcfg = {lang: 'es-419'};
+							(function()
+							{
+								var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+							    po.src = 'https://apis.google.com/js/plusone.js';
+							    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+							})();
+						</script>
+						<!-- usando los post de g+ -->
+						<!-- usando los post de tw -->
+						<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.facebook.com/KhrizEnriquez" data-via="khrizenriquez" data-lang="en" data-related="anywhereTheJavascriptAPI" data-count="vertical">Tweet</a>
+						<!-- usando los post de tw -->
+						<div id="caja_widget">
+							<div id="titulo_widget" class='label-inverse'>Categorías</div>
+								<?php
 								$categoria=$tra->obtenerNoticias();	
 								for ($i=0;$i<sizeof($categoria);$i++)
 								{
@@ -147,44 +187,42 @@ $datos=$tra->obtenerPostPorId();
 									<div id="contenido_widget">
 										<a href="http://127.0.0.1/blogkhriz/?cat=<?php echo $categoria[$i]["IdCategoria"];?>" title="<?php echo $categoria[$i]["NombreCategoria"];?>"><?php echo @$categoria[$i]["NombreCategoria"];?></a>
 									</div>
-							<?php
+								<?php
 								}
 								?>
-								</div>
-						
+							</div>
 							<div class="separador_lateral_widget"></div>
 						</div>
-						
 						<div id="separador_widget"></div>
-						<div id="widget">
-							
-								<div id="caja_widget">
-									<div id="titulo_widget" class='label-inverse'>Ultimos VideoTutoriales</div>
+							<div id="caja_widget">
+								<div id="titulo_widget" class='label-inverse'>Ultimos posts</div>
 									<?php
-								for ($i=0;$i<10;$i++)
-								{
-								?>
-									<div id="contenido_widget">PHP</div>
-							<?php
-								}
-								?>
+									$noticias = $tra->obtenerUltimasNoticias();
+									for ($i=0;$i<sizeof($noticias);$i++)
+									{
+										//$texto=str_replace(" ","-",$noticias[$i]["NombreProducto"]);
+									?>
+										<div id="contenido_widget">
+											<a href="<?php print $texto."p".$noticias[$i]["IdProducto"].".html"?>" title="<?php print @$noticias[$i]['NombreProducto'] ?>"><?php print @Conectar::corta_palabra($noticias[$i]['NombreProducto'], 20); ?></a>
+										</div>
+									<?php
+									}
+									?>
 								</div>
-						
-							<div class="separador_lateral_widget"></div>
+								<div class="separador_lateral_widget"></div>
+							</div>
 						</div>
-						
 					</div>
 
-					<div id="footer"></div>
 				</div>
 			</div>
-			<footer id="footer">
-						<?php
-				        $pie = new ElementosRepetidos();
-				        $pie->piePagina('black', '&COPY;Khriz Enríquez ');
-				        ?>
-					</footer>
+		
 		</section>
-
+		<footer id="footer">
+			<?php
+			$pie = new ElementosRepetidos();
+			$pie->piePagina('black', '&COPY;Khriz Enríquez ');
+			?>
+		</footer>
 	</body>
 </html>

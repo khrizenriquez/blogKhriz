@@ -91,6 +91,12 @@ html
     overflow: hidden;
     vertical-align: top;
 }
+#form
+{
+    display: inline-block;
+    text-align: center;
+    width: 50%;
+}
 #menu
 {
 
@@ -207,6 +213,10 @@ html
     {
         width: 30%;
     }
+    #form
+    {
+        width: 70%;
+    }
     #menu
     {
 
@@ -281,6 +291,7 @@ html
     #contenido_widget
     {
         text-align: right;
+        transition: all 0.5s ease;
     }
     #divContent
     {
@@ -310,7 +321,11 @@ html
     }
     #divSidebar
     {
-        width: 50%;
+        width: 90%;
+    }
+    #form
+    {
+        width: 90%;
     }
     #menu
     {
@@ -385,7 +400,7 @@ html
     }
     #contenido_widget
     {
-        text-align: right;
+        text-align: left;
     }
     #divContent
     {
@@ -415,7 +430,11 @@ html
     }
     #divSidebar
     {
-        width: 50%;
+        width: 90%;
+    }
+    #form
+    {
+        width: 90%;
     }
     #menu
     {
