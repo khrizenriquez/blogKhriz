@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-06-2013 a las 10:43:34
+-- Tiempo de generación: 22-06-2013 a las 01:49:10
 -- Versión del servidor: 5.5.27
 -- Versión de PHP: 5.4.7
 
@@ -336,7 +336,7 @@ CREATE TABLE IF NOT EXISTS `comentarios` (
   `Fecha` date NOT NULL,
   `idProductos` int(11) NOT NULL,
   PRIMARY KEY (`idComentario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=33 ;
 
 --
 -- Volcado de datos para la tabla `comentarios`
@@ -359,7 +359,22 @@ INSERT INTO `comentarios` (`idComentario`, `Nombre`, `Correo`, `Web`, `Text`, `F
 (14, 'Khriz Enríquez', 'khriz@khriz.com', 'khriz.khrizenriquez.com', 'Esta es una excelente pagina y se ve muy bien :D', '2013-06-21', 1),
 (15, 'Khriz Enríquez', 'khriz@khriz.com', 'khriz.khrizenriquez.com', 'Esta es una excelente pagina y se ve muy bien :D', '2013-06-21', 1),
 (16, 'Khriz Enríquez', 'khriz@khriz.com', 'khriz.khrizenriquez.com', 'Esta es una excelente pagina y se ve muy bien :D', '2013-06-21', 1),
-(17, 'Khriz Enríquez', 'khriz@khriz.com', 'khriz.khrizenriquez.com', 'Esta es una excelente pagina y se ve muy bien :D', '2013-06-21', 1);
+(17, 'Khriz Enríquez', 'khriz@khriz.com', 'khriz.khrizenriquez.com', 'Esta es una excelente pagina y se ve muy bien :D', '2013-06-21', 1),
+(18, '', '', '', '', '2013-06-21', 0),
+(19, '', '', '', '', '2013-06-21', 0),
+(20, '', '', '', '', '2013-06-21', 0),
+(21, '', '', '', '', '2013-06-21', 0),
+(22, '', '', '', '', '2013-06-21', 0),
+(23, '', '', '', '', '2013-06-21', 0),
+(24, '', '', '', '', '2013-06-21', 0),
+(25, '', '', '', '', '2013-06-21', 0),
+(26, 'Eliazar Ventura', 'eventura@ventura.com', '', 'juelamadre, aun no esta funcionando muy bien esto pero lo lograre solucionar :D, tengo que hacerlo.', '2013-06-21', 0),
+(27, 'Cafe malasia', 'cafemalasia@cafe.com', 'cafemalasia.com.gt', 'esta es la página de café malasia entonces debemos apoyar con todo.', '2013-06-21', 0),
+(28, 'Oto Esparza', 'oesparza@gmail.com', 'oesparza.com', 'esta es la página de mi amigo Oto Esparza :D.', '2013-06-21', 43),
+(29, 'José Urizar', 'juri@jose.com', '', 'este es el post, ahora ya todo esta muy bueno :D solo es de utilizarlo de la mejor manera :D', '2013-06-21', 70),
+(30, 'Monica', 'moniki.sosa@monica.com', '', 'yo pensé que me iban a dar la receta', '2013-06-21', 49),
+(31, 'Chris Enríquez', 'christoferen7@khriz.com', '', 'Este post se esta ingresa do desde un dispositivo movil :O.', '2013-06-22', 70),
+(32, 'Berto Enríquez', 'berto@berto.com', '', 'Este es el comentario de prueba que, se están usando las tablas de Neptuno, la de categorías y productos, agregándole la tabla de comentarios. :D (y)', '2013-06-22', 76);
 
 -- --------------------------------------------------------
 
